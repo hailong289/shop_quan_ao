@@ -1,0 +1,11 @@
+<?php 
+define('HOST_DB','localhost');
+define('USER_DB','root');
+define('PASS_DB','');
+define('DB_NAME','banquanao');
+define('ROOT_URL','/project/shopquanao');
+define('ADMIN_URL',ROOT_URL.'/admin');
+define('SITE_URL',ROOT_URL.'/site');
+define('PAGE_SIZE',6);
+define('PAGE_SITE',9);
+?>

@@ -1,0 +1,39 @@
+RewriteEngine ON
+Options -Indexes
+#bat dau tu file site
+
+RewriteRule "^$" site/
+
+RewriteRule ^trang-chu$ site/index.php
+#list products
+RewriteRule ^san-pham$ site/?act=products
+RewriteRule ^san-pham/page=([0-9]+)$ site/?act=products&page=$1
+RewriteRule ^danhmuc/(.*)$ site/?act=products&slug=$1
+RewriteRule ^danh-muc/(.*)/page=([0-9]+)$ site/?act=products&slug=$1&page=$2
+RewriteRule ^(.*).html$ site/?act=detail&slug=$1
+
+#viewcart
+RewriteRule ^gio-hang$ site/?act=cart&what=view
+#addto cart
+RewriteRule ^add-cart-([0-9]+)$ site/?act=cart&what=add&id=$1
+RewriteRule ^don-hang$ site/?act=donhang
+
+#thanhtoan
+RewriteRule ^thanh-toan$ site/?act=thanhtoan
+RewriteRule ^thanh-toan-dh$ site/?act=thanhtoan&checkout=dathang
+RewriteRule ^thanh-toan-online$ site/?act=thanhtoan&checkout=vnp
+RewriteRule ^create_pay_ment$ site/?act=thanhtoan&checkout=create_pay_ment
+
+#login
+
+RewriteRule ^dang-nhap$ site/?act=dangnhap
+RewriteRule ^dang-nhap_$ site/?act=dangnhap&sign=checkLogin 
+RewriteRule ^dang-ky$ site/?act=dangky
+RewriteRule ^dang-ky_$ site/?act=dangky&sign_up=insert
+RewriteRule ^quen-pass$ site/?act=quenpass
+RewriteRule ^quen-pass_$ site/?act=quenpass&checkout=email
+RewriteRule ^doi-mk_([0-9]+)$ site/?act=doimk&id=$1
+RewriteRule ^doi-mk_$ site/?act=doimk&condition=changepass
+RewriteRule ^tai-khoan$ site/?act=account
+
+
